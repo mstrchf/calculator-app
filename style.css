@@ -223,7 +223,11 @@ button {
     }
 
     .buttons {
-        gap: .5em;
+        gap: .75em;
         padding: 1em;
+    }
+
+    input {
+        padding: 0.25em;
     }
 }
