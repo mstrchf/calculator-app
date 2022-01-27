@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+main {
+  background-color: hsl(222, 26%, 31%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5em;
+  justify-content: center;
+}
+
+.head {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: aliceblue;
+    /* border: 1px solid; */
+}
+
+.head > div {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 1em
+}
+
+div.toggle-numbers {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: .75em;
+}
+
+.toggle-numbers span:hover {
+    cursor: pointer;
+}
+
+.toggle {
+    width: 3.5em;
+    height: 1.3em;
+    background-color: hsl(223, 31%, 20%);
+    border-radius: .75em;
+    margin-top: 3px;
+    padding: .25em;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.toggle-button {
+    width: 1em;
+    height: 1em;
+    background-color: hsl(6, 63%, 50%);
+    border-radius: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+  }
+
+.reset {
+  grid-column: 1 / 3;
+}
+
+.reset,
+.del {
+  background-color: hsl(225, 21%, 49%);
+  box-shadow: 0 4px 0 0 hsl(224, 28%, 35%);
+  color: aliceblue;
+  font-size: 1.5em;
+}
+
+.equal {
+  grid-column: 3 / 5;
+  background-color: hsl(6, 63%, 50%);
+  box-shadow: 0 4px 0 0 hsl(6, 70%, 34%);
+  color: aliceblue;
+}
+
+input {
+  width: 100%;
+  text-align: right;
+  padding: 0.75em;
+  border: none;
+  background-color: hsl(224, 36%, 15%);
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  border-radius: 0.2em;
+  color: white;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+}
+
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+  padding: 1.75em;
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 0.5em;
+}
+
+button {
+  border: none;
+  border-radius: 0.25em;
+  padding: 0.25em 0.25em;
+  background-color: hsl(30, 25%, 89%);
+  color: hsl(221, 14%, 31%);
+  box-shadow: 0 4px 0 0 hsl(28, 16%, 65%);
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/* themes */
+
+.button-3 {
+    background-color: hsl(268, 47%, 21%);
+    box-shadow: 0 4px 0 0 hsl(290, 70%, 36%);
+    color: hsl(52, 100%, 62%)
+}
+
+
+
+.del-reset-2 {
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0 4px 0 0 hsl(185, 58%, 25%);
+}
+
+.del-reset-3 {
+    background-color: hsl(281, 89%, 26%);
+    box-shadow: 0 4px 0 0 hsl(285, 91%, 52%);
+    color: aliceblue;
+}
+
+.main-2 {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.main-3 {
+    background-color: hsl(268, 75%, 9%);
+    color: hsl(52, 100%, 62%)
+}
+
+.head-2 {
+    color: hsl(60, 10%, 19%);
+
+}
+
+.head-3 {
+    color: hsl(52, 100%, 62%);
+}
+
+.buttons-toggle-2 {
+    background-color: hsl(0, 5%, 81%);
+}
+
+.buttons-toggle-3 {
+    background-color: hsl(268, 71%, 12%);
+    
+}
+
+.screen-2 {
+    background-color: hsl(0, 0%, 93%);
+    color: black;
+}
+
+.screen-3 {
+    background-color: hsl(268, 71%, 12%);
+    color: hsl(52, 100%, 62%)
+}
+
+
+
+.equal-toggle-3 {
+    background-color: hsl(176, 100%, 44%);
+    box-shadow: 0 4px 0 0 hsl(177, 92%, 70%);
+    color: hsl(268, 71%, 12%);
+}
+
+
+
+@media screen and (max-width: 1440px) {
+    form {
+        max-width: 40%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    form {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    form {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    form {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,198 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- displays site properly based on user's device -->
+
+   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+   <title>Frontend Mentor | Calculator app</title>
+   <link rel="stylesheet" href="style.css">
+   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+   <style>
+     .attribution {
+       font-size: 11px;
+       text-align: center;
+     }
+
+     .attribution a {
+       color: hsl(228, 45%, 44%);
+     }
+   </style>
+ </head>
+
+ <body>
+
+   <main>
+
+
+
+     <form>
+
+       <div class="head">
+         <h2>calc</h2>
+         <div>
+           <h6>THEME</h6>
+           <div>
+             <div class="toggle-numbers">
+               <span id="theme-1">1</span>
+               <span id="theme-2">2</span>
+               <span id="theme-3">3</span>
+             </div>
+             <div class="toggle">
+               <div class="toggle-button"></div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+       <input type="text" id="display-output" placeholder="">
+       <div class="buttons">
+         <button>1</button>
+         <button>2</button>
+         <button>3</button>
+         <button class="del">DEL</button>
+         <button>4</button>
+         <button>5</button>
+         <button>6</button>
+         <button> + </button>
+         <button>7</button>
+         <button>8</button>
+         <button>9</button>
+         <button> - </button>
+         <button>.</button>
+         <button>0</button>
+         <button> / </button>
+         <button> x </button>
+         <button class="reset">RESET</button>
+         <button class="equal"> = </button>
+       </div>
+     </form>
+   </main>
+
+   <div class="attribution">
+     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+     Coded by <a href="#">Your Name Here</a>.
+   </div>
+
+   <script src="script.js"></script>
+   <script>
+     let form = document.querySelector('form')
+     let buttons = document.querySelectorAll('button')
+     let screen = document.getElementById('display-output')
+     let theme1Toggle = document.getElementById('theme-1')
+     let theme2Toggle = document.getElementById('theme-2')
+     let theme3Toggle = document.getElementById('theme-3')
+     let main = document.querySelector('main')
+     let delBtn = document.querySelector('.del')
+     let buttonsContainer = document.querySelector('.buttons')
+     let resetBtn = document.querySelector('.reset')
+     let toggleContainer = document.querySelector('.toggle')
+     let equalBtn = document.querySelector('.equal')
+     let toggleBtn = document.querySelector('.toggle-button')
+     let head = document.querySelector('.head')
+
+     theme1Toggle.addEventListener('click', e => {
+       toggleContainer.style.justifyContent = 'flex-start'
+       toggleContainer.classList.remove('buttons-toggle-2')
+       resetBtn.classList.remove('del-reset-2')
+       delBtn.classList.remove('del-reset-2')
+       buttonsContainer.classList.remove('buttons-toggle-2')
+       main.classList.remove('main-2')
+       screen.classList.remove('screen-2')
+       head.classList.remove('head-2')
+       toggleContainer.classList.remove('buttons-toggle-3')
+       resetBtn.classList.remove('del-reset-3')
+       delBtn.classList.remove('del-reset-3')
+       buttonsContainer.classList.remove('buttons-toggle-3')
+       main.classList.remove('main-3')
+       screen.classList.remove('screen-3')
+       equalBtn.classList.remove('equal-toggle-3')
+       toggleBtn.classList.remove('equal-toggle-3')
+       head.classList.remove('head-3')
+       buttons.forEach(button => {
+         button.classList.remove('button-3')
+       })
+
+     })
+
+     theme2Toggle.addEventListener('click', e => {
+       toggleContainer.classList.remove('buttons-toggle-3')
+       resetBtn.classList.remove('del-reset-3')
+       delBtn.classList.remove('del-reset-3')
+       buttonsContainer.classList.remove('buttons-toggle-3')
+       main.classList.remove('main-3')
+       screen.classList.remove('screen-3')
+       equalBtn.classList.remove('equal-toggle-3')
+       toggleBtn.classList.remove('equal-toggle-3')
+       head.classList.remove('head-3')
+       buttons.forEach(button => {
+         button.classList.remove('button-3')
+       })
+
+       toggleContainer.style.justifyContent = 'center'
+       toggleContainer.classList.add('buttons-toggle-2')
+       resetBtn.classList.add('del-reset-2')
+       delBtn.classList.add('del-reset-2')
+       buttonsContainer.classList.add('buttons-toggle-2')
+       main.classList.add('main-2')
+       screen.classList.add('screen-2')
+       head.classList.add('head-2')
+
+     })
+
+     theme3Toggle.addEventListener('click', e => {
+       toggleContainer.classList.remove('buttons-toggle-2')
+       resetBtn.classList.remove('del-reset-2')
+       delBtn.classList.remove('del-reset-2')
+       buttonsContainer.classList.remove('buttons-toggle-2')
+       main.classList.remove('main-2')
+       screen.classList.remove('screen-2')
+       buttons.forEach(button => {
+         button.classList.remove('button-2')
+       })
+
+       toggleContainer.style.justifyContent = 'flex-end'
+       toggleContainer.classList.add('buttons-toggle-3')
+       resetBtn.classList.add('del-reset-3')
+       delBtn.classList.add('del-reset-3')
+       buttonsContainer.classList.add('buttons-toggle-3')
+       main.classList.add('main-3')
+       screen.classList.add('screen-3')
+       equalBtn.classList.add('equal-toggle-3')
+       toggleBtn.classList.add('equal-toggle-3')
+       head.classList.add('head-3')
+       buttons.forEach(button => {
+         button.classList.add('button-3')
+       })
+
+     })
+
+     form.addEventListener('submit', e => {
+       e.preventDefault()
+       let ans = eval(screen.value)
+       screen.value = ans
+     })
+
+     buttons.forEach(button => {
+       button.addEventListener('click', e => {
+         e.preventDefault()
+         if (e.target.classList.contains('equal')) {
+           console.log(screen.value);
+           let ans = eval(screen.value)
+           screen.value = ans
+         } else if (e.target.classList.contains('del')) {
+           screen.value = screen.value.slice(0, -1)
+         } else if (e.target.classList.contains('reset')) {
+           screen.value = ''
+         } else {
+           screen.value += e.target.textContent
+         }
+       })
+     })
+   </script>
+ </body>
+
+ </html>
