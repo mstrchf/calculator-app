@@ -221,4 +221,9 @@ button {
     form {
         max-width: 100%;
     }
+
+    .buttons {
+        gap: .5em;
+        padding: 1em;
+    }
 }
